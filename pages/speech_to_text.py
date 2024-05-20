@@ -18,7 +18,7 @@ audio_file_path = 'files/audio/smart_alerts.mp3'
 # Open the audio file
 with open(audio_file_path, "rb") as audio_file:
     # Transcribe the audio using OpenAI's Whisper model
-    transcription.text = client.audio.transcriptions.create(
+    transcription = client.audio.transcriptions.create(
   model="whisper-1",
   file=audio_file
 )
