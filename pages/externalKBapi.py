@@ -13,6 +13,7 @@ import openai
 my_api_key = st.secrets["api_keys"]["OPENAI_API_KEY"]
 
 client = OpenAI(api_key=my_api_key)
+st.title("External KB API")
 
 # Your external KB URL
 KB_URL = "https://help.ilab.agilent.com/"
