@@ -19,7 +19,7 @@ st.title("External KB API")
 KB_URL = "https://help.ilab.agilent.com/"
 
 # Your FAQs JSONL file
-FAQS_JSONL = "faqs.jsonl"
+FAQS_JSONL = "files/dataset/faqs.jsonl"
 
 # Load FAQs from JSONL
 def load_faqs():
