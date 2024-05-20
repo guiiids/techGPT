@@ -6,7 +6,7 @@ import openai
 
 
 
-# Get the API key from the environment variabl
+# Get the API key from the environment variable
 
 
 my_api_key = st.secrets["api_keys"]["OPENAI_API_KEY"]
