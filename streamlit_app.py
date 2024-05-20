@@ -4,10 +4,14 @@ from openai import OpenAI
 import openai
 
 
-# Load environment variables from .env file
 
-# Get the API key from the environment variable
-client = OpenAI(api_key="sk-proj-FBMfNzQ9tgPTVEBLMSrXT3BlbkFJHR12R0vKrUknUaGsqvh0")
+
+# Get the API key from the environment variabl
+
+
+my_api_key = st.secrets["api_keys"]["OPENAI_API_KEY"]
+
+client = OpenAI(api_key=my_api_key)
 
 
 
