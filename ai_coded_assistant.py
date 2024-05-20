@@ -1,11 +1,13 @@
-import openai
+import os
+import streamlit as st
 from openai import OpenAI
+import openai
 
-# Initialize the OpenAI client
-apikey = "sk-proj-qfhKKD6FKpyM6qRJWx71T3BlbkFJLGnuqOyji8v965kWayuM"
+# Get the API key from the environment variable
 
-client = OpenAI(api_key=apikey)
+my_api_key = st.secrets["api_keys"]["OPENAI_API_KEY"]
 
+client = OpenAI(api_key=my_api_key)
 
 # Step 1: Create an Assistant with File Search Enabled
 assistant = client.beta.assistants.create(
