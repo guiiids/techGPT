@@ -11,7 +11,7 @@ my_api_key = st.secrets["api_keys"]["OPENAI_API_KEY"]
 client = OpenAI(api_key=my_api_key)
 
 # Path to the audio file
-audio_file_path = 'docs/audio/smart_alerts.mp3'
+audio_file_path = 'files/audio/smart_alerts.mp3'
 
 # Open the audio file
 with open(audio_file_path, "rb") as audio_file:
