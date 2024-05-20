@@ -1,4 +1,5 @@
 import os
+import time
 import streamlit as st
 from openai import OpenAI
 import openai
@@ -17,7 +18,7 @@ audio_file_path = 'files/audio/smart_alerts.mp3'
 # Open the audio file
 with open(audio_file_path, "rb") as audio_file:
     # Transcribe the audio using OpenAI's Whisper model
-    transcript = client.audio.transcriptions.create(
+    transcription.text = client.audio.transcriptions.create(
   model="whisper-1",
   file=audio_file
 )
@@ -29,5 +30,9 @@ with open(audio_file_path, "rb") as audio_file:
     # Save the transcription to a text file
     with open('transcription.txt', 'w') as file:
         file.write(transcribed_text)
+        
+    with st.spinner('Wait for it...'):
+    time.sleep(5)
+st.success('Done!')
 
 print("Transcription saved to transcription.txt")
