@@ -32,7 +32,7 @@ with open(audio_file_path, "rb") as audio_file:
         file.write(transcribed_text)
         
     with st.spinner('Wait for it...'):
-    time.sleep(5)
-st.success('Done!')
+        time.sleep(5)
+        st.success('Done!')
 
 print("Transcription saved to transcription.txt")
