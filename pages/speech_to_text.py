@@ -23,7 +23,7 @@ with open(audio_file_path, "rb") as audio_file:
 )
 
     # Extract the transcribed text
-    transcribed_text = transcript['text']
+    transcribed_text = transcription.text
     st.write(transcribed_text)
 
     # Save the transcription to a text file
