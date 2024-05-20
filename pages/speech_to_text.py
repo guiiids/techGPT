@@ -9,6 +9,7 @@ import openai
 my_api_key = st.secrets["api_keys"]["OPENAI_API_KEY"]
 
 client = OpenAI(api_key=my_api_key)
+st.title("Speech-To-Text Helper")
 
 # Path to the audio file
 audio_file_path = 'files/audio/smart_alerts.mp3'
@@ -16,13 +17,14 @@ audio_file_path = 'files/audio/smart_alerts.mp3'
 # Open the audio file
 with open(audio_file_path, "rb") as audio_file:
     # Transcribe the audio using OpenAI's Whisper model
-    transcription = openai.Audio.transcribe(
-        model="whisper-1",
-        file=audio_file
-    )
+    transcript = client.audio.transcriptions.create(
+  model="whisper-1",
+  file=audio_file
+)
 
     # Extract the transcribed text
-    transcribed_text = transcription['text']
+    transcribed_text = transcript['text']
+    st.write(transcribed_text)
 
     # Save the transcription to a text file
     with open('transcription.txt', 'w') as file:
